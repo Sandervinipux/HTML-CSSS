@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Canvas</title>
+	<script src="Modernizr-2.0.6.js" type="text/javascript"></script>
+	<script>
+		function draw() {
+			//Прроверка поддержки элемента canvas в браузере.
+			if (!Modernizr.canvas) return;
+
+			//получение элемента и его графического контекста.
+			var canvas = document.getElementById("canvas");
+			var context = canvas.getContext("2d");
+
+			//Создание пути
+			context.beginPath();
+			context.moveTo(60, 200);
+			context.lineTo(200, 60);
+			context.moveTo(50, 250);
+			context.lineTo(250, 50);
+			context.moveTo(70, 260);
+			context.lineTo(260, 70);
+			context.moveTo(90, 270);
+			context.lineTo(270, 90);
+			context.moveTo(110, 280);
+			context.lineTo(280, 110);
+
+			//ерчение линии на холсте.
+			context.stroke();
+			}
+			if (window.addEventListener)
+				window.addEventListener("load", draw, true);
+	</script>
+</head>
+<body>
+	<canvas id="canvas" height="300" width="300" style="border: solid 1px black;">
+		Ваш браузер не поддерживает элемент <b>Canvas</b>
+	</canvas>
+</body>
+</html>
