@@ -108,6 +108,7 @@ game.ball = {
     }
 };
 
+
 game.platform = {
     velocity: 6,
     dx: 0,
