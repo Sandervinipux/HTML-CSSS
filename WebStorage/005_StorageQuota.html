@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>QUOTA_EXCEEDED_ERR</title>
+	<script>
+		try	 {
+			for (var i =0; i < 10; i++) {
+				window.localStorage.setItem(i, 'DATA DATA DATA DATA DATA DATA DATA')
+			}
+
+		} catch (e) {
+			document.write(e);
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
