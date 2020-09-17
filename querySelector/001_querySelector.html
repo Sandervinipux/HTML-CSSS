@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>querySelect function</title>
+	<script>
+		if (window.addEventListener) window.addEventListener('load', loadHandler, false);
+
+		function loadHandler() {
+			//Получение первого элемента на странице, которой соответствует одному из селекторов, указанных в параметрах.
+			// В данном случае возвращаем элемент со значением test в атрибуте class
+			var e = document.querySelector('test');//$('test') - эквивалент jQuery
+
+			//var e = document.querySelector('#helloWorld', '.test2'); // получение элемента с id helloworld или элемента с классом test
+
+			//var e = document.querySelector('.meu > li'); // Первый li вложенный в элемент с классом menu
+
+			e.style.fontSize = '30px';
+			e.style.color = 'red';
+		}
+	</script>
+	<style type="text/css">
+		.test {
+			color: Green;
+		}
+	</style>
+</head>
+<body>
+	<p id="helloWorld">
+		Item 1
+	</p>
+	<p class="test">
+		Item2
+	</p>
+	<p>
+		Item 3
+	</p>
+	<p class="test">
+		Item 4
+	</p>
+	<p>
+		Item 5
+	</p>
+	<ul class="menu">
+		<li>menu item 1</li>
+		<li>menu item 2</li>
+		<li>menu item 3</li>
+	</ul>
+
+</body>
+</html>
