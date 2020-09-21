@@ -12,4 +12,4 @@ addEventListener('message', function () {
 		postMessage(i + '=' + calcFib(i) + '<br />');
 	}
 
-}, false)
+}, false);
