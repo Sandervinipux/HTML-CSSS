@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,4 +27,34 @@
 <body>
 	<canvas id="canvas" width="300" height="300" style="border: solid 3px black;"></canvas>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Shadows</title>
+	<script type="text/javascript">
+		function draw() {
+			var context = document.getElementById('canvas').getContext('2d');
+			context.font = 'bold 50 px Segoe UI';
+			context.fillStyle = 'Orange';
+			context.textBaseline = 'alphabetic';
+
+			context.shadowColor = 'rgba(0, 0, 0, 0.2';
+			context.shadowOffsetX = 10;
+			context.shadowOffsetY = 10;
+			context.ShadowBlur = 20;
+
+			var text = "urauraurauraurau"
+			var w = context.measureText(text);
+			context.fillText(text, (context.canvas.width - w.width) / 2, 100);
+		}
+
+		if (window.addEventListener)
+			window.addEventListener('load', draw, true);
+	</script>
+</head>
+<body>
+	<canvas id="canvas" width="300" height="300" style="border: solid 3px black;"></canvas>
+</body>
+>>>>>>> 5d5613c97308f8e65d32bc1b07782e5e81e29448
 </html>

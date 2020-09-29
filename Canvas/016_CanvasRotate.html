@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,4 +47,54 @@
 		<input type="button" id="" id="btn" value="rotate" />
 	</div>
 </body>
+=======
+<!DOCTYPE html>
+<html>
+<head>
+	<title>rotate transformation</title>
+	<script type="text/javascript">
+		function loadHandler() {
+			// функция для получения элементов по id
+			var $ = function (id) {
+				return document.getElementById(id);
+			}
+			// контекст для canvas
+			var context = $('canvas').getContext('2d');
+
+				var img = new Image();
+				img.src = 'logo.png' ;
+				img.onload = draw;
+				$("btn").onclick = draw;
+			
+				function draw() {
+					context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+				
+					var angle = $('angle').value;
+					angle = angle * Math.PI / 180;
+		
+
+				// сохранение состояния полотна и начала системы координат.
+					context.save();
+					//трансформация перемещения.
+					context.scale(x, y);
+					context.drawImage(img, 0, 0, 100, 100);
+				//Восстанвление сохранённого состояния полотна.
+					context.restore(); 
+				}
+			}
+
+			if (window.addEventListener)
+			window.addEventListener("load", loadHandler, true);
+	</script>
+</head>
+<body>
+	<canvas id="canvas" width="300" height="300">
+	</canvas>
+	<div style="border: 1px solid gray; padding: 8px; margin: 8px;">
+		Угол поворота
+		<input type="text" id="angle" value="0" />
+		<input type="button" id="" id="btn" value="rotate" />
+	</div>
+</body>
+>>>>>>> 5d5613c97308f8e65d32bc1b07782e5e81e29448
 </html>

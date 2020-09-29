@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,4 +29,36 @@
 		Ваш браузер не поддерживает элемент <b>canvas</b>
 	</canvas>
 </body>
+=======
+<!DOCTYPE html>
+<html>
+<head>
+	<title>drawImage()</title>
+	<script src="Modernizr-2.0.6.js"></script>
+		<script>
+			function draw() {
+				if (!Modernizr.canvas) return;
+
+				var canvas = document.getElementById("canvas");
+				var context = canvas.getContext("2d");
+
+				var logo = new Image();
+
+				logo.onload = function () {
+					context.drawImage(logo, 22, 22);
+				};
+
+				logo.src = "poster.png";
+			}
+
+			if (window.addEventListener)
+				window.addEventListener("load", draw, true);
+		</script>
+</head>
+<body>
+	<canvas id="canvas" height="300" width="300" style="border:solid 1px black">
+		Ваш браузер не поддерживает элемент <b>canvas</b>
+	</canvas>
+</body>
+>>>>>>> 5d5613c97308f8e65d32bc1b07782e5e81e29448
 </html>

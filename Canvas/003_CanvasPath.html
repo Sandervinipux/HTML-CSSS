@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,4 +39,46 @@
 		Ваш браузер не поддерживает элемент <b>Canvas</b>
 	</canvas>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Canvas</title> 
+	<script src="Modernizr-2.0.6.js"></script>
+	<script>
+		function draw() {
+			//Проверка поддержки элемента canvas в браузере.
+			if (!Modernizr.canvas) return;
+
+			var canvas = document.getElementById("canvas");
+			var context = canvas.getContext("2d");
+
+			context.save();
+			context.translate(100, 100)
+			// na4alo puti.
+
+			context.beginPath();
+			context.moveTo(0, 0);
+			context.lineTo(100, 0);
+			context.lineTo(100, 100);
+			context.lineTo(0,100);	
+		// Прорисовка линии от точки (0,100) к началу пути.
+			context.closePath();n
+
+			context.stroke();
+
+			context.restore();
+
+		}
+
+		if (window.addEventListener)
+			window.addEventListener("load", draw, true);
+	</script>
+</head>
+<body>
+	<canvas id="canvas" height="300" width="300" style="border: solid 1px black;">
+		Ваш браузер не поддерживает элемент <b>Canvas</b>
+	</canvas>
+</body>
+>>>>>>> 5d5613c97308f8e65d32bc1b07782e5e81e29448
 </html>

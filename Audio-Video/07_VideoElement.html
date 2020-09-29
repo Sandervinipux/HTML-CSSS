@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,4 +28,35 @@
 		}
 	</script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Управление воспроизведением через JavaScript</title>
+</head>
+<body>
+	<video id="video" style="border: 2px solid gray; cursor: pointer;">
+		<source src="video/vsvideo.mp4" />
+		<source src="video/vsvideo.ogg" />
+		<source src="video/vsvideo.webm" />
+	</video>
+
+	<script>
+		window.onload = function () {
+			var videoElem = document.getElementById("video");
+			videoElem.width = videoElem.videoWidth / 2;
+			videoElem.height = videoElem.videoHeight / 2;
+			videoElem.onmouseover = function () {
+				this.play();
+			}
+
+			videoElem.onmouseout() = function () {
+				this.pause();
+			}
+		}
+	</script>
+</body>
+>>>>>>> 5d5613c97308f8e65d32bc1b07782e5e81e29448
 </html>

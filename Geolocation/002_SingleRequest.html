@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -114,4 +115,122 @@
 		}
 	</script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Geolocation API</title>
+</head>
+<body>
+	<table border="1" cellpadding="10" cellspacing="0">
+		<tr>
+			<td>
+				широта
+			</td>
+			<td>
+				<p id="latitude">
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				долгота
+			</td>
+			<td>
+				<p id="longtitude">
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				точность (м)
+			</td>
+			<td>
+				<p id="accuaracy">
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				высота
+			</td>
+			<td>
+				<p id="altitude">
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				точность (высота)
+			</td>
+			<td>
+				<p id="altitudeAccuracy">
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				курс
+			</td>
+			<td>
+				<p id="heading">
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Скорость
+			</td>
+			<td>
+				<p id="speed">
+				</p>
+			</td>
+		</tr>
+	</table>
+	<p id="status">
+	</p>
+	<script type="text/javascript">
+		//Разовое получение данных о местопложении.
+		//updateLocation - метод, котоырй будет запускать после получения данных о местоположении
+		// handleError - метод запуститься в случае сбоя при получении местоположения.
+		navigator.geolocation.getCurrentPosition(updateLocation, handleError);
+
+		function updateLocation(position) {
+			var $ = function (selector) {
+				return document.getElementById(selector);
+			}
+
+			$("latitude").innerHTML = position.coords.latitude;
+			$("longtitude").innerHTML = position.coords.longtitude;
+			$("accuaracy").innerHTML = position.coords.accuaracy;
+			$("altitude").innerHTML = position.coords.altitude;
+			$("altitudeAccuracy").innerHTML = position.coords.heading;
+			$("heading").innerHTML = position.coords.heading;
+			$("speed").innerHTML = position.coords.speed;
+		}
+		function handleError(error) {
+			switch (error.code) {
+				case 0:
+					updateStatus("При попытке определить местоположение возникала ошибка:" + error.message);
+					break;
+				case 1:
+					updateStatus("Пользователь запретил получение данных о местоположении.");
+					break;
+				case 2:
+					updateStatus("Браузеру не удалось определить местоположение: " + error.message);
+					break;
+				case 3:
+					updateStatus("Истекло доступное время ожидания.");
+					break;
+			}
+		}
+
+		function updateStatus(message) {
+			document.getElementById("status").innerHTML = message;
+		}
+	</script>
+</body>
+>>>>>>> 5d5613c97308f8e65d32bc1b07782e5e81e29448
 </html>
