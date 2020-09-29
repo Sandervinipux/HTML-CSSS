@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Selection</title>
+	<style>
+		/*
+			Псевдо элемент ::selection применяет стиль к выделенному пользователет тексту.
+			В правилах стилей допускается использовать следующие свойствa: color, background и background-color;
+		*/
+
+		p::selection {
+			color: #ff0;
+			background: #000;
+		}
+	</style>
+</head>
+<body>
+	<p>
+		Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+</body>
+</html>
